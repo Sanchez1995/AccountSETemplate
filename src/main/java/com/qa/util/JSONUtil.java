@@ -1,7 +1,7 @@
 package com.qa.util;
 
 
-import com.owlike.genson.*;
+
 import com.google.gson.*;
 public class JSONUtil {
 
