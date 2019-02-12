@@ -2,7 +2,10 @@ package com.qa.persistence.repository;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.qa.persistence.domain.Account;
 
@@ -12,7 +15,6 @@ public class AccountMapRepository implements AccountRepository {
 
 	Map<Long, Account> accountMap = new HashMap<Long, Account>();
 	private JSONUtil util = new JSONUtil();
-	
 
 	public String getAllAccounts() {
 
@@ -39,6 +41,12 @@ public class AccountMapRepository implements AccountRepository {
 		createAccount(account);
 
 		return "Account Updated";
+	}
+
+	public int checkName(String testName) {
+		
+		return (int) accountMap.values().stream().filter(n -> n.getFirst_name().contentEquals(testName)).count();
+
 	}
 
 }
