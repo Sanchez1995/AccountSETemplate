@@ -61,4 +61,10 @@ public class AccountMapRepository implements AccountRepository {
 
 	}
 
+	@Override
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
+	}
+
 }

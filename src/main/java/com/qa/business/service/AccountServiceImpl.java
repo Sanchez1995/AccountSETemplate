@@ -16,7 +16,7 @@ public class AccountServiceImpl implements AccountService {
 
 		return repo.getAllAccounts();
 	}
-
+ 
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		if (anAccount.getAccount_number().contains("9")) {
@@ -31,7 +31,7 @@ public class AccountServiceImpl implements AccountService {
 
 		return repo.deleteAccount(id);
 	}
-
+ 
 	public String updateAccount(Long id, String account) {
 
 		return repo.updateAccount(id, account);
@@ -40,5 +40,15 @@ public class AccountServiceImpl implements AccountService {
 	public String getOneAccount(Long id) {
 
 		return repo.getOneAccount(id);
+	}
+
+	public void setUtil(JSONUtil util2) {
+		this.util = util2;
+		
+	}
+
+	public void setRepo(AccountRepository repo2) {
+		this.repo = repo2;
+		
 	}
 }

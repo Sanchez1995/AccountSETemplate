@@ -1,5 +1,7 @@
 package com.qa.persistence.repository;
 
+import com.qa.util.JSONUtil;
+
 public interface AccountRepository {
 
 	String getAllAccounts();
@@ -11,5 +13,11 @@ public interface AccountRepository {
 	String updateAccount(Long id, String account);
 
 	String getOneAccount(Long id);
+
+	void setUtil(JSONUtil util);
+
+	
+
+	
 
 }

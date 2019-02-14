@@ -14,6 +14,7 @@ import javax.transaction.Transactional;
 import com.qa.persistence.domain.Account;
 
 import com.qa.util.*;
+
 @Default
 @Transactional(SUPPORTS)
 public class AccountDBRepository implements AccountRepository {
@@ -66,13 +67,13 @@ public class AccountDBRepository implements AccountRepository {
 	}
 
 	public void setManager(EntityManager manager2) {
-		this.manager=manager2;
-		
+		this.manager = manager2;
+
 	}
 
 	public void setUtil(JSONUtil util2) {
 		this.util = util2;
-		
+
 	}
 
 }

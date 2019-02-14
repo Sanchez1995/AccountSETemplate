@@ -55,22 +55,28 @@ public class AccountDBRepositoryTest {
 	}
 
 	@Test
+	public void testGetOneAccount() {
+		System.out.println(repo.getOneAccount(1L));
+		Account anAccount = new Account("123", "George", "Downe");
+		Mockito.when(manager.find(Account.class, 1L)).thenReturn(anAccount);
+		Assert.assertEquals(MOCK_OBJECT, repo.getOneAccount(1L));
+	}
 
+	@Test
 	public void testDeleteAccount() {
 		String reply = repo.deleteAccount(1L);
 		Assert.assertEquals(reply, "{\"message\": \"Account sucessfully deleted\"}");
-	}
-
-	@Ignore
-	@Test
-	public void testGetOneAccount() {
-		System.out.println(repo.getOneAccount(1L));
-		Assert.assertEquals(MOCK_OBJECT, repo.getOneAccount(1L));
 	}
 
 	@Test
 	public void testCreateAccount() {
 		String reply = repo.createAccount(MOCK_OBJECT);
 		Assert.assertEquals(reply, "{\"message\": \"Account has been succesfully added\"}");
+	}
+
+	@Test
+	public void testUpdateAccount() {
+		String reply = repo.updateAccount(1L, MOCK_OBJECT);
+		Assert.assertEquals(reply, "{\"message\": \"Account sucessfully updated\"}");
 	}
 }
