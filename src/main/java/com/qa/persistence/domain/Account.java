@@ -1,12 +1,24 @@
 package com.qa.persistence.domain;
 
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+@Entity
 public class Account {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String first_name;
-	private String last_name;
+	@Column(name = "Account_Number")
 	private String account_number;
+	@Column(name = "First_Name")
+	private String first_name;
+	@Column(name = "Last_Name")
+	private String last_name;
 
 	public Account() {
 
