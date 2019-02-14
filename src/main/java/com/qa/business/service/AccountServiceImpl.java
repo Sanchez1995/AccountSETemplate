@@ -20,9 +20,10 @@ public class AccountServiceImpl implements AccountService {
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		if (anAccount.getAccount_number().contains("9")) {
-			return repo.createAccount(account);
-		} else {
 			return "{\"message\": \"An account number cannot contain the number 9\"}";
+		} else {
+			
+			return repo.createAccount(account);
 		}
 	}
 
